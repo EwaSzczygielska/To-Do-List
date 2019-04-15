@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>✔ Checked</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Norican|Shadows+Into+Light+Two" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1> <i class="logo-icon fas fa-check-double"></i> Checked<span>.</span> </h1>
+    </header>
+
+    <article class="add-task">
+        <h2> <span>Add</span> new task </h2>
+        <form>
+            <input type="text">
+            <div class="settings-wrapper">
+                <label>Category</label>
+                <label>Priority</label>
+                <label>Deadline</label>
+                <span class="category">
+                    <input type="radio" id="home" name="category" value="home">
+                    <label for="home" class="category-label ctg-home">home</label>
+                    <input type="radio" id="work" name="category" value="work">
+                    <label for="work" class="category-label ctg-work">work</label>
+                    <input type="radio" id="social" name="category" value="social">
+                    <label for="social" class="category-label ctg-social">social</label>
+                </span>
+                <input type="range" min="1" max="3" step="1" value="1" class="slider" id="priority">
+                <input type="date" placeholder="DD-MM-YYYY">
+            </div>
+            <button><i class="fas fa-plus"></i></button>
+        </form>
+    </article>
+
+    <article class="settings">
+        <section class="filter">
+            <h2>Filter</h2>
+            <form>
+                <button class="category-button">all</button>
+                <button class="category-button">home</button>
+                <button class="category-button">work</button>
+                <button class="category-button">social</button>
+            </form>
+        </section>
+
+        <section class="filter">
+            <h2>Sort by</h2>
+            <form>
+                <span class="category">
+                    <input type="radio" id="priority" name="category" value="priority">
+                    <label for="priority" class="category-label ctg-home">priority</label>
+                    <input type="radio" id="deadline" name="category" value="deadline">
+                    <label for="deadline" class="category-label ctg-work">deadline</label>
+                    <input type="radio" id="creation-date" name="category" value="creation-date">
+                    <label for="creation-date" class="category-label ctg-social">date of creation</label>
+                </span>
+            </form>
+        </section>
+    </article>
+
+    <article class="lists">
+        <section class="to-do-list list">
+            <h2>To Do</h2>
+            <div class="task">
+                <p>
+                    <i class="priority-icon priority-low fas fa-dot-circle"></i> <span>1.</span> Lorem ipsum dolor sit
+                    amet, consectetuer adipiscing elit.
+                    <span>
+                        <i class="action-icon far fa-check-circle"></i>
+                        <i class="action-icon far fa-edit"></i>
+                        <i class="action-icon fas fa-trash-alt"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="task">
+                <p>
+                    <i class="priority-icon priority-mid fas fa-dot-circle"></i> <span>2.</span> Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Magni officia, maxime porro
+                    laboriosam, quibusdam sint tenetur ad amet natus harum tempore nihil.
+                    <span>
+                        <i class="action-icon far fa-check-circle"></i>
+                        <i class="action-icon far fa-edit"></i>
+                        <i class="action-icon fas fa-trash-alt"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="task">
+                <p>
+                    <i class="priority-icon priority-high fas fa-dot-circle"></i><span> 3.</span> <span
+                        style="text-decoration: line-through;">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Adipisci, dolores quod illo ab ex?</span>
+                </p>
+            </div>
+        </section>
+        <section class="done-list list">
+            <h2>Done</h2>
+            <div class="task">
+                <p>
+                    <span>1.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, dolores quod illo
+                    ab ex?
+                </p>
+            </div>
+        </section>
+    </article>
+    
+    <footer>
+        .CodersCamp 2019
+    </footer>
+</body>
+
+</html>
