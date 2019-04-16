@@ -11,12 +11,18 @@
     --home-color-accent: rgba(182, 91, 128, 0.07);
     --work-color-accent: rgba(129, 118, 190, 0.07);
     --social-color-accent: rgba(72, 103, 174, 0.07);
+    --priority-low: rgb(69, 173, 73);
+    --priority-midium: rgb(223, 179, 35);
+    --priority-high: rgb(212, 19, 19);
+
+    --font1: 'Shadows Into Light Two', cursive;
+    --font2: 'Norican', cursive;
 }
 
 body {
     margin: 0 auto;
     background-image: url('./src/img/main-bg.svg');
-    font-family: 'Shadows Into Light Two', sans-serif;
+    font-family: var(--font1);
     font-size: 14px;
     box-sizing: border-box;
 }
@@ -25,12 +31,16 @@ header {
     margin-top: .5rem;
     padding: 0 2em;
     background-color: rgba(255, 255, 255, 0.5);
-    font-family: 'Norican', cursive;
+    font-family: var(--font2);
     font-size: 2em;
     color: #444444;
     -webkit-box-shadow: 0px 23px 96px -23px rgba(0, 0, 0, 0.46);
     -moz-box-shadow: 0px 23px 96px -23px rgba(0, 0, 0, 0.46);
     box-shadow: 0px 23px 96px -23px rgba(0, 0, 0, 0.46);
+}
+
+p{
+    font-family: var(--font1);
 }
 
 .add-task {
@@ -39,7 +49,7 @@ header {
     min-height: 200px;
     margin: 0 auto;
     padding: .8em 1em;
-    font-family: 'Norican', cursive;
+    font-family: var(--font2);
     font-size: 1.4em;
     color: #444444;
     position: relative;
@@ -61,7 +71,7 @@ input[type="text"] {
     background-color: rgba(255, 255, 255, 0);
     border: 0;
     border-bottom: 1px solid #AAAAAA;
-    font-family: 'Shadows Into Light Two', cursive;
+    font-family: var(--font1);
     font-size: 1.3em;
 }
 
@@ -153,7 +163,7 @@ input[type="radio"]:checked+label {
     width: 100%;
     padding: 0 10px;
     border: 2px solid #CCCCCC;
-    font-family: 'Shadows Into Light Two', cursive;
+    font-family: var(--font1);
     font-size: 1em;
     text-align: center;
     color: #444444;
@@ -182,7 +192,7 @@ input[type="radio"]:checked+label {
 
 .filter h2 {
     display: inline-block;
-    font-family: 'Norican', cursive;
+    font-family: var(--font2);
     margin: 0;
     margin-bottom: 10px;
 }
@@ -198,7 +208,7 @@ input[type="radio"]:checked+label {
     margin: 0 .2em;
     background-color: #65BCBC;
     border: 0;
-    font-family: 'Shadows Into Light Two', cursive;
+    font-family: var(--font1);
     font-size: 1.1em;
     color: #555555;
 }
@@ -252,7 +262,7 @@ input[type="radio"]:checked+label {
 }
 
 .list h2 {
-    font-family: 'Norican', cursive;
+    font-family: var(--font2);
     font-size: 2em;
     color: #444444;
     margin: 0;
@@ -285,9 +295,17 @@ input[type="radio"]:checked+label {
     opacity: 0.5;
 }
 
-.priority-low { color: rgb(69, 173, 73); }
-.priority-mid { color: rgb(223, 179, 35); }
-.priority-high { color: rgb(212, 19, 19); }
+.priority-low {
+    color: rgb(69, 173, 73);
+}
+
+.priority-mid {
+    color: rgb(223, 179, 35);
+}
+
+.priority-high {
+    color: rgb(212, 19, 19);
+}
 
 span {
     color: var(--main-color);
@@ -311,7 +329,7 @@ span {
 
 footer {
     background: rgba(255, 255, 255, 0.1);
-    font-family: 'Norican', cursive;
+    font-family: var(--font2);
     font-size: 1.2em;
     color: #444444;
     padding: 10px 0;
@@ -322,7 +340,11 @@ footer {
 }
 
 @media screen and (min-width: 0px) and (max-width: 575px) {}
+
 @media screen and (min-width: 576px) and (max-width: 767px) {}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {}
+
 @media screen and (min-width: 992px) and (max-width: 1199px) {}
+
 @media screen and (min-width: 1200px) {}
