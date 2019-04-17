@@ -23,23 +23,23 @@
     <article class="add-task">
         <h2> <span>Add</span> new task </h2>
         <form>
-            <input type="text">
+            <input type="text" class="add-task-input">
             <div class="settings-wrapper">
                 <label>Category</label>
                 <label>Priority</label>
                 <label>Deadline</label>
                 <span class="category">
                     <input type="radio" id="home" name="category" value="home">
-                    <label for="home" class="category-label ctg-home">home</label>
+                    <label for="home" class="category-label ctg-home"><i class="fas fa-home"></i> home</label>
                     <input type="radio" id="work" name="category" value="work">
-                    <label for="work" class="category-label ctg-work">work</label>
+                    <label for="work" class="category-label ctg-work"><i class="fas fa-briefcase"></i> work</label>
                     <input type="radio" id="social" name="category" value="social">
-                    <label for="social" class="category-label ctg-social">social</label>
+                    <label for="social" class="category-label ctg-social"><i class="fas fa-users"></i> social</label>
                 </span>
                 <input type="range" min="1" max="3" step="1" value="1" class="slider" id="priority">
                 <input type="date" placeholder="DD-MM-YYYY">
             </div>
-            <button><i class="fas fa-plus"></i></button>
+            <button class="add"><i class="fas fa-plus"></i></button>
         </form>
     </article>
 
@@ -48,9 +48,9 @@
             <h2>Filter</h2>
             <form>
                 <button class="category-button">all</button>
-                <button class="category-button">home</button>
-                <button class="category-button">work</button>
-                <button class="category-button">social</button>
+                <button class="category-button"><i class="fas fa-home"></i> home</button>
+                <button class="category-button"><i class="fas fa-briefcase"></i> work</button>
+                <button class="category-button"><i class="fas fa-users"></i> social</button>
             </form>
         </section>
 
@@ -123,6 +123,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="src/js/index.js" type="text/javascript"></script>
+    <script src="src/js/slider.js" type="text/javascript"></script>
 </body>
 
 </html>
