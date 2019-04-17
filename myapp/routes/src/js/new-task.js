@@ -1,13 +1,16 @@
-let addbtn = document.getElementsByClassName("add-button");
+document.addEventListener("DOMContentLoaded", function () {
+
+var addbtn = document.getElementById("add-button");
 
 function addNewTask() {
-    let task = document.getElementById("maininput").value;
-    let taskContainer = document.querySelector(".to-do-list");
-    let newTask = document.createElement('div');
+    var task = document.getElementById("maininput").value;
+    var taskContainer = document.querySelector(".to-do-list");
+    var newTask = document.createElement('div');
     console.log(task);
-    let newDiv = newTask.classList.add('task');
-    newDiv.textContent = task;
-    taskContainer.appendChild(newDiv);
+    var newDiv = newTask.classList.add('task');
+    //taskContainer.appendChild(newDiv);
 }
 
-addbtn.addEventListener("click", addNewTask());
+addbtn.addEventListener('click', addNewTask());
+
+});
