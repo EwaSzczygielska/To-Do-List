@@ -23,4 +23,17 @@ router.get('/src/js/index.js', function (req, res, next) {
   res.sendFile(path.join(__dirname + '/src/js/index.js'));
 });
 
+router.get('/src/js/slider.js', function (req, res, next) {
+  res.sendFile(path.join(__dirname + '/src/js/slider.js'));
+});
+
+router.get('/src/js/tasks.js', function (req, res, next) {
+  res.sendFile(path.join(__dirname + '/src/js/tasks.js'));
+});
+
+router.get('/src/js/new-task.js', function (req, res, next) {
+  res.sendFile(path.join(__dirname + '/src/js/new-task.js'));
+});
+
+
 module.exports = router;
