@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Norican|Shadows+Into+Light+Two" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="shortcut icon" href="./src/img/logo.png">
 </head>
 
 <body>
     <header>
         <h1> <i class="logo-icon fas fa-check-double"></i> Checked<span>.</span> </h1>
+        <button class="logout">LOG OUT</button>
     </header>
 
     <article class="add-task">
@@ -36,7 +35,7 @@
                     <input type="radio" id="social" name="category" value="social">
                     <label for="social" class="category-label ctg-social"><i class="fas fa-users"></i> social</label>
                 </span>
-                <input type="range" min="1" max="3" step="1" value="1" class="slider" id="priority">
+                <input type="range" min="1" max="3" step="1" value="1" class="slider" id="priority-slider">
                 <input type="date" placeholder="DD-MM-YYYY">
             </div>
             <button class="add"><i class="fas fa-plus"></i></button>
@@ -59,15 +58,19 @@
             <form>
                 <span class="category">
                     <input type="radio" id="priority" name="category" value="priority">
-                    <label for="priority" class="category-label ctg-home">priority</label>
+                    <label for="priority" class="category-label sort-priority">priority</label>
                     <input type="radio" id="deadline" name="category" value="deadline">
-                    <label for="deadline" class="category-label ctg-work">deadline</label>
+                    <label for="deadline" class="category-label sort-deadline">deadline</label>
                     <input type="radio" id="creation-date" name="category" value="creation-date">
-                    <label for="creation-date" class="category-label ctg-social">date of creation</label>
+                    <label for="creation-date" class="category-label sort-createdate">date of creation</label>
                 </span>
             </form>
         </section>
     </article>
+
+    <aside class="progress-bar">
+        <progress max="3" value="1"></progress>
+    </aside>
 
     <article class="lists">
         <section class="to-do-list list">
@@ -119,8 +122,6 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="src/js/index.js" type="text/javascript"></script>
     <script src="src/js/slider.js" type="text/javascript"></script>

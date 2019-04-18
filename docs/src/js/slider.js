@@ -1,4 +1,4 @@
-let slider = document.querySelector('#priority');
+let slider = document.querySelector('#priority-slider');
 
 slider.addEventListener("change", function () {
     if (slider.value == 1) {

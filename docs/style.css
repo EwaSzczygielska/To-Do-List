@@ -28,15 +28,37 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: .5rem;
-    padding: 0 2em;
+    margin-bottom: 1em;
+    padding: .3em 2em;
     background-color: rgba(255, 255, 255, 0.5);
     font-family: var(--font2);
-    font-size: 2em;
+    font-size: 1.2em;
     color: #444444;
     -webkit-box-shadow: 0px 23px 96px -23px rgba(0, 0, 0, 0.46);
     -moz-box-shadow: 0px 23px 96px -23px rgba(0, 0, 0, 0.46);
     box-shadow: 0px 23px 96px -23px rgba(0, 0, 0, 0.46);
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.logout {
+    height: 30px;
+    border: 0;
+    padding: 2px 20px;
+    background-color: var(--main-color-light);
+    font-family: var(--font1);
+}
+
+.logout:hover {
+    background-color: var(--main-color);
+    color: #EEEEEE;
 }
 
 p,
@@ -84,6 +106,7 @@ input[type="text"] {
 .category-label {
     display: inline-block;
     flex-grow: 1;
+    margin: 0;  
     margin-right: 5px;
     padding: 5px 10px;
     border: 2px solid #CCCCCC;
@@ -128,7 +151,6 @@ input[type="radio"]:checked+label {
 .slider2 {
     -webkit-appearance: none;
     width: 100%;
-    height: 42px;
     border: 2px solid #CCCCCC;
     outline: none;
     -webkit-transition: .2s;
@@ -147,6 +169,7 @@ input[type="radio"]:checked+label {
     background-color: var(--priority-low);
     cursor: pointer;
     opacity: 0.7;
+    z-index: 1;
 }
 
 .slider1::-webkit-slider-thumb {
@@ -159,6 +182,7 @@ input[type="radio"]:checked+label {
     background-color: var(--priority-midium);
     cursor: pointer;
     opacity: 0.7;
+    z-index: 1;
 }
 
 .slider2::-webkit-slider-thumb {
@@ -171,6 +195,7 @@ input[type="radio"]:checked+label {
     background-color: var(--priority-high);
     cursor: pointer;
     opacity: 0.7;
+    z-index: 1;
 }
 
 
@@ -273,7 +298,7 @@ input[type="radio"]:checked+label {
 }
 
 .category-button {
-    padding: 5px 20px;
+    padding: 5px 10px;
     flex-grow: 1;
     margin: 0 .2em;
     background-color: #65BCBC;
@@ -299,6 +324,10 @@ input[type="radio"]:checked+label {
     background-color: var(--social-color-light);
 }
 
+.category-button:hover {
+    color: #EEEEEE;
+}
+
 .category-button:nth-of-type(1):hover {
     background-color: var(--main-color);
 }
@@ -314,6 +343,22 @@ input[type="radio"]:checked+label {
 .category-button:nth-of-type(4):hover {
     background-color: var(--social-color);
 }
+
+.progress-bar {
+    width: 90%;
+    margin: 0 auto;
+}
+
+progress {
+    width: 100%;
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    color: var(--main-color);
+}
+
 
 .lists {
     display: grid;
