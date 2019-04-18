@@ -1,7 +1,13 @@
-let task = document.querySelector('.add-task-input');
-let add = document.querySelector('.add');
+let addbtn = document.getElementsByClassName("add-button");
 
-add.addEventListener("click", function () {
-console.log(task.value);
-$('.task').append('<p>' + task.value + '</p>');
-});
+function addNewTask() {
+    let task = document.getElementById("maininput").value();
+    let taskContainer = document.querySelector(".to-do-list");
+    let newTask = document.createElement('div');
+    console.log(task);
+    let newDiv = newTask.classList.add('task');
+    newDiv.textContent = task;
+    taskContainer.appendChild(newDiv);
+}
+
+addbtn.addEventListener("click", addNewTask());
