@@ -42,13 +42,14 @@ addBtn.addEventListener("click", e => {
     const taskContent = document.createElement("p");
     taskContent.appendChild(document.createTextNode(newTask.message));
     taskContent.appendChild(actionIcons);
-    
+
     if (newTask.category == "home") taskContent.classList.add("ctg-home");
     else if (newTask.category == "work") taskContent.classList.add("ctg-work");
     else if (newTask.category == "social") taskContent.classList.add("ctg-social");
 
     newTaskElement.appendChild(priorityIndicator);
     newTaskElement.appendChild(taskContent);
-
     toDoList.appendChild(newTaskElement);
+
+    document.querySelector("#add-task-form").reset();
 });
