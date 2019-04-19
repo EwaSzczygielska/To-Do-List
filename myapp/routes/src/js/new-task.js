@@ -40,7 +40,8 @@ addBtn.addEventListener("click", e => {
     actionIcons.appendChild(deleteIcon);
 
     const taskContent = document.createElement("p");
-    taskContent.appendChild(document.createTextNode(newTask.message));
+    const taskContent1 = taskContent.appendChild(document.createElement("span"));
+    taskContent1.appendChild(document.createTextNode(newTask.message));
     taskContent.appendChild(actionIcons);
 
     if (newTask.category == "home") taskContent.classList.add("ctg-home");
