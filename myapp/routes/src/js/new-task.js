@@ -52,4 +52,8 @@ addBtn.addEventListener("click", e => {
     toDoList.appendChild(newTaskElement);
 
     document.querySelector("#add-task-form").reset();
+    let slider = document.querySelector('#priority-slider');
+    slider.classList.remove("slider1");
+    slider.classList.remove("slider2");
+    slider.classList.add("slider");
 });
