@@ -3,17 +3,17 @@
     --main-color-light: rgba(34, 140, 140, 0.3);
     --main-color-accent: rgba(34, 140, 140, 0.07);
     --home-color: rgba(182, 91, 128, 1);
-    --work-color: rgb(129, 118, 190);
-    --social-color: rgba(72, 103, 174, 0.8);
+    --work-color: rgb(123, 108, 206);
+    --social-color: rgba(38, 110, 218, 0.8);
     --home-color-light: rgba(182, 91, 128, 0.3);
-    --work-color-light: rgba(129, 118, 190, 0.3);
-    --social-color-light: rgba(72, 103, 174, 0.3);
+    --work-color-light: rgba(123, 108, 206, 0.3);
+    --social-color-light: rgba(38, 110, 218, 0.3);
     --home-color-accent: rgba(182, 91, 128, 0.15);
-    --work-color-accent: rgba(190, 118, 118, 0.15);
-    --social-color-accent: rgba(72, 103, 174, 0.15);
-    --priority-low: rgb(69, 173, 73);
-    --priority-midium: rgb(223, 179, 35);
-    --priority-high: rgb(212, 19, 19);
+    --work-color-accent: rgba(123, 108, 206, 0.15);
+    --social-color-accent: rgba(38, 110, 218, 0.15);
+    --priority-low: rgb(154, 240, 157);
+    --priority-midium: rgb(236, 214, 140);
+    --priority-high: rgb(238, 139, 139);
 
     --font1: 'Shadows Into Light Two', cursive;
     --font2: 'Norican', cursive;
