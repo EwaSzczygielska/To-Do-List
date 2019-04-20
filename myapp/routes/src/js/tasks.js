@@ -18,14 +18,19 @@
         },
 
         completeTask: function (task) {
-            var compl_task = document.createElement('div');
-            //compl_task.parentNode.classList.add('done-list');
-            compl_task = task.innerText;
+            var complTask = document.querySelector('.done-list');
+            const newDoneElem = document.createElement("div");
+            newDoneElem.classList.add('task');
+            const newDoneElem1 = document.createElement("p");
+            newDoneElem.appendChild(newDoneElem1);
+            const newDoneElem2 = task.lastElementChild.firstElementChild;
+            console.log(newDoneElem2);
+            newDoneElem1.appendChild(newDoneElem2);
+            complTask.appendChild(newDoneElem);
         },
 
         editTask: function (task) {
             var row = task.parentNode.parentNode.firstChild;
-            console.log(row);
             row.parentNode.firstChild.contentEditable = "true";
             row.addEventListener("blur", event => {
                 return row.contentEditable = "false"

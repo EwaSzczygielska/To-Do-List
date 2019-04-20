@@ -10,7 +10,7 @@ addBtn.addEventListener("click", e => {
         message: " " + idCounter + ". " + document.forms[0].elements[0].value + " ",
         priority: document.forms[0].elements[4].value,
         category: "",
-        deadline: document.forms[0].elements[5].value,
+        deadline: "Deadline: " + document.forms[0].elements[5].value,
         createDate: currentDate.getDate() + "." + 
                     (currentDate.getMonth()+1) + "." +
                     currentDate.getFullYear()
@@ -43,6 +43,10 @@ addBtn.addEventListener("click", e => {
     const taskContent1 = taskContent.appendChild(document.createElement("span"));
     taskContent1.appendChild(document.createTextNode(newTask.message));
     taskContent.appendChild(actionIcons);
+    const deadline = document.createElement("span");
+    deadline.appendChild(document.createTextNode(newTask.deadline));
+    newTaskElement.appendChild(taskContent);
+    newTaskElement.appendChild(deadline);
 
     if (newTask.category == "home") taskContent.classList.add("ctg-home");
     else if (newTask.category == "work") taskContent.classList.add("ctg-work");
