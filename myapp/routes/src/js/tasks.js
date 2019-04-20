@@ -4,10 +4,8 @@
 
         init: function () {
             document.querySelector('.to-do-list').addEventListener('click', function (e) {
-                // Remove task
                 if (e.target.classList.contains('fa-trash-alt')) {
                     app.removeTask(e.target.parentNode.parentNode.parentNode);
-                    // Edit Task
                 } else if (e.target.classList.contains('fa-edit')) {
                     app.editTask(e.target);
                 } else if (e.target.classList.contains('fa-check-circle')) {
@@ -15,6 +13,22 @@
                     app.removeTask(e.target.parentNode.parentNode.parentNode);
                 }
             }, false);
+            document.querySelector('.filter').addEventListener('click', function (e) {
+                if (e.target.classList.contains('all')) {
+                    app.homeSelect(e.target.parentNode.parentNode.parentNode);
+                } else if (e.target.classList.contains('home')) {
+                    app.homeSelect(e.target.parentNode.parentNode.parentNode);
+                } else if (e.target.classList.contains('work')) {
+                    app.workSelect(e.target);
+                } else if (e.target.classList.contains('social')) {
+                    app.socialSelect(e.target.parentNode.parentNode.parentNode);
+                } else if (e.target.classList.contains('sort-priority')) {
+                    app.prioritySort(e.target.parentNode.parentNode.parentNode);
+                } else if (e.target.classList.contains('sort-deadline')) {
+                    app.deadlineSort(e.target.parentNode.parentNode.parentNode);
+                } else if (e.target.classList.contains('sort-createdate')) {
+                    app.dateSort(e.target.parentNode.parentNode.parentNode);
+                }}, false);
         },
 
         completeTask: function (task) {

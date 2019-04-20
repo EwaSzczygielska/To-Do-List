@@ -7,7 +7,7 @@ addBtn.addEventListener("click", e => {
     const idCounter = toDoList.childElementCount;
     let newTask = {
         id: idCounter,
-        message: " " + idCounter + ". " + document.forms[0].elements[0].value + " ",
+        message: " " /*+ idCounter + ". " */+ document.forms[0].elements[0].value + " ",
         priority: document.forms[0].elements[4].value,
         category: "",
         deadline: "Deadline: " + document.forms[0].elements[5].value,
@@ -41,9 +41,11 @@ addBtn.addEventListener("click", e => {
 
     const taskContent = document.createElement("p");
     const taskContent1 = taskContent.appendChild(document.createElement("span"));
+    taskContent1.classList.add('taskText');
     taskContent1.appendChild(document.createTextNode(newTask.message));
     taskContent.appendChild(actionIcons);
     const deadline = document.createElement("span");
+    deadline.classList.add('deadline');
     deadline.appendChild(document.createTextNode(newTask.deadline));
     newTaskElement.appendChild(taskContent);
     newTaskElement.appendChild(deadline);

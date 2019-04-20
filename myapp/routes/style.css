@@ -539,6 +539,15 @@ span {
     background-color: var(--social-color-accent);
 }
 
+.deadline{
+    width: 25%;
+}
+.taskText{
+    max-width: 75%;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
 footer {
     background: rgba(255, 255, 255, 0.1);
     font-family: var(--font1);
