@@ -74,7 +74,7 @@ label {
     height: fit-content;
     margin: 0 auto;
     padding: .8em 1em;
-    font-family: var(--font2);
+    font-family: var(--font1);
     font-size: 1.4em;
     color: #444444;
     position: relative;
@@ -98,6 +98,7 @@ label {
     border-bottom: 1px solid #AAAAAA;
     font-family: var(--font1);
     font-size: 1.3em;
+    border-bottom-color: #CCCCCC;
 }
 
 .settings-wrapper {
@@ -322,7 +323,7 @@ input[type="radio"]:checked+label {
 
 .filter h2 {
     display: inline-block;
-    font-family: var(--font2);
+    font-family: var(--font1);
     margin: 0;
     margin-bottom: 10px;
 }
@@ -442,7 +443,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .list h2 {
-    font-family: var(--font2);
+    font-family: var(--font1);
     font-size: 2em;
     color: #444444;
     margin: 0;
@@ -514,7 +515,7 @@ span {
 
 footer {
     background: rgba(255, 255, 255, 0.1);
-    font-family: var(--font2);
+    font-family: var(--font1);
     font-size: 1.2em;
     color: #444444;
     padding: 10px 0;
@@ -524,9 +525,32 @@ footer {
     box-shadow: 0px 3px 26px 1px rgba(0, 0, 0, 0.4);
 }
 
-@media screen and (min-width: 0px) and (max-width: 575px) {}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .add-task button {
+        bottom: -30px;
+        right: -10px;
+    }
+}
 
-@media screen and (min-width: 576px) and (max-width: 767px) {}
+@media screen and (min-width: 360px) and (max-width: 575px) {
+    .add-task button {
+        bottom: -40px;
+        right: -5px;
+        width: 70px;
+        height: 70px;
+        font-size: 1.9em;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 359px) {
+    .add-task button {
+        bottom: -45px;
+        right: 10px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.7em;
+    }
+}
 
 @media screen and (min-width: 768px) and (max-width: 991px) {}
 
