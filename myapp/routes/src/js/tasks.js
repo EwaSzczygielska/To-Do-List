@@ -14,8 +14,9 @@
                 }
             }, false);
             document.querySelector('.filter').addEventListener('click', function (e) {
+                e.preventDefault();
                 if (e.target.classList.contains('all')) {
-                    app.homeSelect(e.target.parentNode.parentNode.parentNode);
+                    app.allSelect(e.target.parentNode.parentNode.parentNode);
                 } else if (e.target.classList.contains('home')) {
                     app.homeSelect(e.target.parentNode.parentNode.parentNode);
                 } else if (e.target.classList.contains('work')) {
@@ -38,7 +39,6 @@
             const newDoneElem1 = document.createElement("p");
             newDoneElem.appendChild(newDoneElem1);
             const newDoneElem2 = task.lastElementChild.firstElementChild;
-            console.log(newDoneElem2);
             newDoneElem1.appendChild(newDoneElem2);
             complTask.appendChild(newDoneElem);
         },
@@ -56,6 +56,34 @@
             setTimeout(function () {
                 task.remove();
             }, 400);
+        },
+
+       allSelect: function (task) {
+            console.log('all');
+        },
+
+        homeSelect: function (task) {
+            console.log('home');
+        },
+
+        workSelect: function (task) {
+            console.log('work');
+        },
+
+        socialSelect: function (task) {
+            console.log('social');
+        },
+
+        prioritySort: function (task) {
+            console.log('priority');
+        },
+
+        deadlineSort: function (task) {
+            console.log('deadline');
+        },
+
+        dateSort: function (task) {
+            console.log('date');
         },
     };
     app.init();
