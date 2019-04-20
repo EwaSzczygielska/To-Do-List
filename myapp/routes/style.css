@@ -74,7 +74,6 @@ label {
     height: fit-content;
     margin: 0 auto;
     padding: .8em 1em;
-    font-family: var(--font1);
     font-size: 1.4em;
     color: #444444;
     position: relative;
@@ -84,8 +83,10 @@ label {
     box-shadow: 0px 23px 96px -23px rgba(0, 0, 0, 0.46);
 }
 
-.add-task h2 {
+article h2 {
     margin: 0;
+    font-family: var(--font1);
+    font-style: italic;
 }
 
 #maininput {
@@ -423,23 +424,23 @@ progress[value]::-moz-progress-bar {
 
 .lists {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     width: 90%;
     margin: 20px auto 50px auto;
+
 }
 
 .list {
     flex: 1;
-    min-width: 200px;
+    min-width: 300px;
     min-height: 100px;
     margin: 10px;
     padding: 2em;
+
     background-color: rgba(255, 255, 255, 0.5);
     -webkit-box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
     -moz-box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
     box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
-    hyphens: auto;
 }
 
 .list h2 {
@@ -448,12 +449,21 @@ progress[value]::-moz-progress-bar {
     color: #444444;
     margin: 0;
     display: inline-block;
+    border-bottom: 2px solid #CCCCCC;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .list .task {
+    display: flex;
     font-size: 1.5em;
-    padding: 20px 0;
+    padding: 10px 0;
     border-bottom: 1px solid #CCCCCC;
+}
+
+.list .task>*{
+    display: inline;
 }
 
 .action-icon {
@@ -473,6 +483,7 @@ progress[value]::-moz-progress-bar {
 }
 
 .priority-icon {
+    margin-top: 4px;
     opacity: 0.5;
     margin-right: 1em;
 }
@@ -493,13 +504,28 @@ span {
     color: var(--main-color);
 }
 
-.list .task p {
-    display: inline-block;
-    margin: 0;
+.to-do-list .task p {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 5px 0 0;
     padding: 0 5px;
     word-wrap: break-word;
     hyphens: auto;
 }
+
+.to-do-list .task p span:first-child {
+   color: #444444;
+   display: inline-block;
+   min-width: 100px;
+}
+
+.to-do-list .task p span:last-child {
+    display: inline-block;
+    min-width: 90px;
+    text-align: right;
+}
+
 
 .ctg-home {
     background-color: var(--home-color-accent);
@@ -540,6 +566,34 @@ footer {
         height: 70px;
         font-size: 1.9em;
     }
+
+    .to-do-list .task p span:last-child {
+        display: flex;
+        flex-direction: column;
+        min-width: 25px;
+        text-align: right;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .action-icon {
+        display: inline-block;
+        margin: 3px;
+        padding: 0;
+        opacity: 0.2;
+    }
+
+    .fa-edit{
+        padding-left: 4px;
+    }
+
+    .fa-trash-alt {
+        padding-right: 1px;
+    }
+
+    .list{
+        min-width: 250px;
+    }
 }
 
 @media screen and (min-width: 0px) and (max-width: 359px) {
@@ -549,6 +603,34 @@ footer {
         width: 60px;
         height: 60px;
         font-size: 1.7em;
+    }
+
+    .to-do-list .task p span:last-child {
+        display: flex;
+        flex-direction: column;
+        min-width: 25px;
+        text-align: right;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .action-icon {
+        display: inline-block;
+        margin: 3px;
+        padding: 0;
+        opacity: 0.2;
+    }
+
+    .fa-edit {
+        padding-left: 4px;
+    }
+
+    .fa-trash-alt{
+        padding-right: 1px;
+    }
+
+    .list {
+        min-width: 200px;
     }
 }
 
