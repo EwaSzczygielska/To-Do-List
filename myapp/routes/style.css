@@ -66,10 +66,12 @@ label {
     font-family: var(--font1);
 }
 
+/*start of styling add task */
 .add-task {
     width: 90%;
     max-width: 1000px;
     min-height: 200px;
+    height: fit-content;
     margin: 0 auto;
     padding: .8em 1em;
     font-family: var(--font2);
@@ -86,9 +88,9 @@ label {
     margin: 0;
 }
 
-input[type="text"] {
+#maininput {
     display: block;
-    width: 95%;
+    width: 90%;
     margin: 1em 0;
     padding: 5px;
     background-color: rgba(255, 255, 255, 0);
@@ -98,28 +100,56 @@ input[type="text"] {
     font-size: 1.3em;
 }
 
-.category {
+.settings-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.settings-wrapper div.set{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 250px;
+    margin: 5px;
+}
+
+.settings-wrapper div.category {
+    flex: 1.5;
+}
+
+.category p#lab{
+    width: 100%;
+}
+
+.category-inputs{
     display: flex;
     width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.category-inputs label span{
+    display: inline-block;
+    min-width: 50px;
+    margin-left: 3px;
 }
 
 .category-label {
     display: inline-block;
-    flex-grow: 1;
+    flex: 1;
+    min-height: 43px;
     margin: 0;  
     margin-right: 5px;
     padding: 5px 10px;
     border: 2px solid #CCCCCC;
     transition: all 0.3s;
     text-align: center;
+    box-sizing: border-box;
 }
 
-.settings-wrapper {
-    display: grid;
-    width: 90%;
-    grid-template-rows: 2em 42px;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    grid-column-gap: 20px;
+.category-inputs .category-label i{
+    color: var(--main-color);
 }
 
 input[type="radio"] {
@@ -146,6 +176,10 @@ input[type="radio"]:checked+label {
     box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
 }
 
+#priority-slider {
+    height: 41px;
+}
+
 .slider,
 .slider1,
 .slider2 {
@@ -158,12 +192,11 @@ input[type="radio"]:checked+label {
     margin: 0;
 }
 
-
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 4px;
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
     background-color: var(--priority-low);
@@ -175,8 +208,8 @@ input[type="radio"]:checked+label {
 .slider1::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 4px;
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
     background-color: var(--priority-midium);
@@ -188,8 +221,8 @@ input[type="radio"]:checked+label {
 .slider2::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 4px;
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
     background-color: var(--priority-high);
@@ -198,10 +231,9 @@ input[type="radio"]:checked+label {
     z-index: 1;
 }
 
-
 .slider::-moz-range-thumb {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 4px;
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
     background-color: var(--priority-low);
@@ -210,8 +242,8 @@ input[type="radio"]:checked+label {
 }
 
 .slider1::-moz-range-thumb {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 4px;
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
     background-color: var(--priority-midium);
@@ -220,8 +252,8 @@ input[type="radio"]:checked+label {
 }
 
 .slider2::-moz-range-thumb {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 4px;
     box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
     background-color: var(--priority-high);
@@ -253,9 +285,9 @@ input[type="radio"]:checked+label {
     opacity: 1;
 }
 
-
 .add-task input[type="date"] {
     width: 100%;
+    height: 41px;
     padding: 0 10px;
     border: 2px solid #CCCCCC;
     font-family: var(--font1);
@@ -263,7 +295,10 @@ input[type="radio"]:checked+label {
     text-align: center;
     color: #444444;
 }
+/*end of styling add task */
 
+
+/*start of styling filter */
 .settings {
     display: flex;
     width: 90%;
@@ -298,9 +333,10 @@ input[type="radio"]:checked+label {
 }
 
 .category-button {
+    min-width: 100px;
     padding: 5px 10px;
-    flex-grow: 1;
-    margin: 0 .2em;
+    flex: 1;
+    margin: 2px;
     background-color: #65BCBC;
     border: 0;
     font-family: var(--font1);
@@ -344,6 +380,25 @@ input[type="radio"]:checked+label {
     background-color: var(--social-color);
 }
 
+.filter .category{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.filter .category label.category-label {
+    display: flex;
+    flex: 1;
+    min-width: 120px;
+    min-height: 40px;
+    margin: 2px;
+    align-items: center;
+    justify-content: center;
+}
+/*end of styling filter */
+
+
+/*start of styling lists */
 .progress-bar {
     width: 90%;
     margin: 1em auto;
@@ -366,19 +421,24 @@ progress[value]::-moz-progress-bar {
 
 
 .lists {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 90%;
     margin: 20px auto 50px auto;
-    grid-column-gap: 2em;
 }
 
 .list {
+    flex: 1;
+    min-width: 200px;
+    min-height: 100px;
+    margin: 10px;
     padding: 2em;
     background-color: rgba(255, 255, 255, 0.5);
     -webkit-box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
     -moz-box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
     box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
+    hyphens: auto;
 }
 
 .list h2 {
@@ -437,6 +497,7 @@ span {
     margin: 0;
     padding: 0 5px;
     word-wrap: break-word;
+    hyphens: auto;
 }
 
 .ctg-home {

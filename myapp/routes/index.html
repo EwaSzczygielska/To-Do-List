@@ -24,19 +24,25 @@
         <form id="add-task-form">
             <input type="text" class="add-task-input" id="maininput">
             <div class="settings-wrapper">
-                <label>Category</label>
-                <label>Priority</label>
-                <label>Deadline</label>
-                <span class="category">
-                    <input type="radio" id="home" name="category" value="home">
-                    <label for="home" class="category-label ctg-home"><i class="fas fa-home"></i> home</label>
-                    <input type="radio" id="work" name="category" value="work">
-                    <label for="work" class="category-label ctg-work"><i class="fas fa-briefcase"></i> work</label>
-                    <input type="radio" id="social" name="category" value="social">
-                    <label for="social" class="category-label ctg-social"><i class="fas fa-users"></i> social</label>
-                </span>
-                <input type="range" min="1" max="3" step="1" value="1" class="slider" id="priority-slider">
-                <input type="date" placeholder="DD-MM-YYYY">
+                <div class="category set">
+                    <p id="lab">Category</p>
+                    <div class="category-inputs">
+                        <input type="radio" id="home" name="category" value="home">
+                        <label for="home" class="category-label ctg-home"><i class="fas fa-home"></i><span> home</span></label>
+                        <input type="radio" id="work" name="category" value="work">
+                        <label for="work" class="category-label ctg-work"><i class="fas fa-briefcase"></i><span> work</span></label>
+                        <input type="radio" id="social" name="category" value="social">
+                        <label for="social" class="category-label ctg-social"><i class="fas fa-users"></i><span> social</span></label>
+                    </div>
+                </div>
+                <div class="set">
+                    <p>Priority</p>    
+                    <input type="range" min="1" max="3" step="1" value="1" class="slider" id="priority-slider">
+                </div>
+                <div class="set">
+                    <p>Deadline</p>    
+                    <input type="date" placeholder="DD-MM-YYYY">
+                </div>
             </div>
             <button class="add-button"><i class="fas fa-plus"></i></button>
         </form>
@@ -55,7 +61,7 @@
 
         <section class="filter">
             <h2>Sort by</h2>
-            <form>
+            <form class="sort-by">
                 <span class="category">
                     <input type="radio" id="priority" name="category" value="priority">
                     <label for="priority" class="category-label sort-priority">priority</label>
