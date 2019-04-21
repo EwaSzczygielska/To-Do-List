@@ -432,11 +432,10 @@ progress[value]::-moz-progress-bar {
 
 .list {
     flex: 1;
-    min-width: 300px;
+    min-width: 400px;
     min-height: 100px;
     margin: 10px;
     padding: 2em;
-
     background-color: rgba(255, 255, 255, 0.5);
     -webkit-box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
     -moz-box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
@@ -541,11 +540,11 @@ span {
 
 .deadline{
     width: 25%;
+    margin-right: 10px;
 }
 .taskText{
     max-width: 75%;
     word-wrap: break-word;
-    word-break: break-all;
 }
 
 footer {
