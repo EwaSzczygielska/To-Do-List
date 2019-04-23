@@ -89,3 +89,16 @@
     app.init();
 
 })();
+
+
+var clearBtn = document.querySelector('.clear-button');
+
+clearBtn.addEventListener('click', function(){
+    //var doneList = document.querySelector('.done-list');
+    var tasks = document.querySelector('.done-list').children;
+    console.log(tasks.length);
+    var len = tasks.length;
+    for (var i = 2; i < len; i++){
+        tasks[2].remove();
+    }    
+});
