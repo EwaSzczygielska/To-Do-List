@@ -47,7 +47,7 @@
             var row = task.parentNode.parentNode.firstChild;
             row.parentNode.firstChild.contentEditable = "true";
             row.addEventListener("blur", event => {
-                return row.contentEditable = "false"
+               return row.contentEditable = "false";
             })
         },
 
