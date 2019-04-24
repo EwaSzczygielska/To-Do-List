@@ -23,7 +23,11 @@
                     app.workSelect(e.target.parentNode.parentNode.parentNode);
                 } else if (e.target.classList.contains('social')) {
                     app.socialSelect(e.target.parentNode.parentNode.parentNode);
-                } else if (e.target.classList.contains('sort-priority')) {
+                }
+            }, false);
+            document.querySelector('.sort-by').addEventListener('click', function (e) {
+                e.preventDefault();
+                if (e.target.classList.contains('sort-priority')) {
                     app.prioritySort(e.target.parentNode.parentNode.parentNode);
                 } else if (e.target.classList.contains('sort-deadline')) {
                     app.deadlineSort(e.target.parentNode.parentNode.parentNode);
@@ -62,7 +66,6 @@
             var el1 = task.nextElementSibling.nextElementSibling.firstElementChild;
             var el = el1.querySelectorAll("div");
             var newArr = Array.from(el);
-            console.log(newArr);
             var i;
             for (i = 0; i < newArr.length; i++) {
                 newArr[i].classList.remove('hidden');
@@ -73,7 +76,6 @@
             var el1 = task.nextElementSibling.nextElementSibling.firstElementChild;
             var el = el1.querySelectorAll("div");
             var newArr = Array.from(el);
-            console.log(newArr);
             var i;
             for (i = 0; i < newArr.length; i++) {
                 if (newArr[i].lastElementChild.className === 'ctg-home') {
@@ -88,7 +90,6 @@
             var el1 = task.nextElementSibling.nextElementSibling.firstElementChild;
             var el = el1.querySelectorAll("div");
             var newArr = Array.from(el);
-            console.log(newArr);
             var i;
             for (i = 0; i < newArr.length; i++) {
                 if (newArr[i].lastElementChild.className === 'ctg-work') {
@@ -103,7 +104,6 @@
             var el1 = task.nextElementSibling.nextElementSibling.firstElementChild;
             var el = el1.querySelectorAll("div");
             var newArr = Array.from(el);
-            console.log(newArr);
             var i;
             for (i = 0; i < newArr.length; i++) {
                 if (newArr[i].lastElementChild.className === 'ctg-social') {
@@ -115,7 +115,28 @@
         },
 
         prioritySort: function (task) {
-            console.log('priority');
+            var el1 = (task.parentNode.nextElementSibling.nextElementSibling.firstElementChild);
+            var el = el1.querySelectorAll("div");
+            var newArr = Array.from(el);
+            var newArr1 = [];
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].firstElementChild.nextElementSibling.classList.contains('priority-high')) {
+                    newArr1.push(newArr[i]);
+                }
+            };
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].firstElementChild.nextElementSibling.classList.contains('priority-mid')) {
+                    newArr1.push(newArr[i]);
+                }
+            };
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].firstElementChild.nextElementSibling.classList.contains('priority-low')) {
+                    newArr1.push(newArr[i]);
+                }
+            };
+            for (i = 0; i < newArr.length; i++) {
+                el1.appendChild(newArr1[i]);
+            };
         },
 
         deadlineSort: function (task) {
