@@ -433,11 +433,13 @@ progress[value]::-moz-progress-bar {
 
 progress::-webkit-progress-value {
     background: linear-gradient(to right, #228c8c 0%, #266eda 33%, #7b6cce 66%, #b65b80 100%);
+    border-radius: 5px;
     opacity: 0.5;
     transition: .8s;
 }
 progress::-moz-progress-bar {
     background: linear-gradient(to right, #228c8c 0%, #266eda 33%, #7b6cce 66%, #b65b80 100%);
+    border-radius: 5px;
     opacity: 0.5;
     transition: .8s;
 }
