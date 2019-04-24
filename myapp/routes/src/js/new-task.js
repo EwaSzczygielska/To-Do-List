@@ -63,4 +63,5 @@ addBtn.addEventListener("click", e => {
     slider.classList.remove("slider1");
     slider.classList.remove("slider2");
     slider.classList.add("slider");
+    setProgressBar();
 });

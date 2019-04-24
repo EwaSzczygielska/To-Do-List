@@ -53,12 +53,11 @@
 
         removeTask: function (task) {
             task.style.opacity = 0;
-            setTimeout(function () {
-                task.remove();
-            }, 400);
+            task.remove();
+            setProgressBar();
         },
 
-       allSelect: function (task) {
+        allSelect: function (task) {
             console.log('all');
         },
 
@@ -94,11 +93,18 @@
 var clearBtn = document.querySelector('.clear-button');
 
 clearBtn.addEventListener('click', function(){
-    //var doneList = document.querySelector('.done-list');
     var tasks = document.querySelector('.done-list').children;
-    console.log(tasks.length);
     var len = tasks.length;
     for (var i = 2; i < len; i++){
         tasks[2].remove();
-    }    
+    }
+    setProgressBar();
 });
+
+function setProgressBar() {
+    var toDoTasksAmount = document.querySelector('.to-do-list').children.length-1;
+    var doneTasksAmount = document.querySelector('.done-list').children.length-2;
+    var progressBar = document.querySelector('#prog-bar');
+    progressBar.setAttribute('max', `${toDoTasksAmount + doneTasksAmount}`);
+    progressBar.setAttribute('value', `${doneTasksAmount}`);
+}
