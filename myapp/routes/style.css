@@ -423,6 +423,14 @@ progress[value]::-moz-progress-bar {
     background-color: var(--main-color);
 }
 
+progress::-webkit-progress-value {
+    background: linear-gradient(to right, #228c8c 0%, #266eda 33%, #7b6cce 66%, #b65b80 100%);
+    opacity: 0.5;
+}
+progress::-moz-progress-bar {
+    background: linear-gradient(to right, #228c8c 0%, #266eda 33%, #7b6cce 66%, #b65b80 100%);
+    opacity: 0.5;
+}
 .lists {
     display: flex;
     flex-wrap: wrap;
@@ -534,6 +542,7 @@ span {
     word-wrap: break-word;
     hyphens: auto;
 }
+
 
 .to-do-list .task p span:first-child {
     color: #444444;
