@@ -20,7 +20,7 @@
                 } else if (e.target.classList.contains('home')) {
                     app.homeSelect(e.target.parentNode.parentNode.parentNode);
                 } else if (e.target.classList.contains('work')) {
-                    app.workSelect(e.target);
+                    app.workSelect(e.target.parentNode.parentNode.parentNode);
                 } else if (e.target.classList.contains('social')) {
                     app.socialSelect(e.target.parentNode.parentNode.parentNode);
                 } else if (e.target.classList.contains('sort-priority')) {
@@ -29,7 +29,8 @@
                     app.deadlineSort(e.target.parentNode.parentNode.parentNode);
                 } else if (e.target.classList.contains('sort-createdate')) {
                     app.dateSort(e.target.parentNode.parentNode.parentNode);
-                }}, false);
+                }
+            }, false);
         },
 
         completeTask: function (task) {
@@ -47,7 +48,7 @@
             var row = task.parentNode.parentNode.firstChild;
             row.parentNode.firstChild.contentEditable = "true";
             row.addEventListener("blur", event => {
-               return row.contentEditable = "false";
+                return row.contentEditable = "false";
             })
         },
 
@@ -58,19 +59,59 @@
         },
 
         allSelect: function (task) {
-            console.log('all');
+            var el1 = task.nextElementSibling.nextElementSibling.firstElementChild;
+            var el = el1.querySelectorAll("div");
+            var newArr = Array.from(el);
+            console.log(newArr);
+            var i;
+            for (i = 0; i < newArr.length; i++) {
+                newArr[i].classList.remove('hidden');
+            };
         },
 
         homeSelect: function (task) {
-            console.log('home');
+            var el1 = task.nextElementSibling.nextElementSibling.firstElementChild;
+            var el = el1.querySelectorAll("div");
+            var newArr = Array.from(el);
+            console.log(newArr);
+            var i;
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].lastElementChild.className === 'ctg-home') {
+                    newArr[i].classList.remove('hidden');
+                } else {
+                    newArr[i].classList.add('hidden');
+                }
+            };
         },
 
         workSelect: function (task) {
-            console.log('work');
+            var el1 = task.nextElementSibling.nextElementSibling.firstElementChild;
+            var el = el1.querySelectorAll("div");
+            var newArr = Array.from(el);
+            console.log(newArr);
+            var i;
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].lastElementChild.className === 'ctg-work') {
+                    newArr[i].classList.remove('hidden');
+                } else {
+                    newArr[i].classList.add('hidden');
+                }
+            };
         },
 
         socialSelect: function (task) {
-            console.log('social');
+            var el1 = task.nextElementSibling.nextElementSibling.firstElementChild;
+            var el = el1.querySelectorAll("div");
+            var newArr = Array.from(el);
+            console.log(newArr);
+            var i;
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].lastElementChild.className === 'ctg-social') {
+                    newArr[i].classList.remove('hidden');
+                } else {
+                    newArr[i].classList.add('hidden');
+                }
+            };
         },
 
         prioritySort: function (task) {
@@ -92,18 +133,18 @@
 
 var clearBtn = document.querySelector('.clear-button');
 
-clearBtn.addEventListener('click', function(){
+clearBtn.addEventListener('click', function () {
     var tasks = document.querySelector('.done-list').children;
     var len = tasks.length;
-    for (var i = 2; i < len; i++){
+    for (var i = 2; i < len; i++) {
         tasks[2].remove();
     }
     setProgressBar();
 });
 
 function setProgressBar() {
-    var toDoTasksAmount = document.querySelector('.to-do-list').children.length-1;
-    var doneTasksAmount = document.querySelector('.done-list').children.length-2;
+    var toDoTasksAmount = document.querySelector('.to-do-list').children.length - 1;
+    var doneTasksAmount = document.querySelector('.done-list').children.length - 2;
     var progressBar = document.querySelector('#prog-bar');
     progressBar.setAttribute('max', `${toDoTasksAmount + doneTasksAmount}`);
     progressBar.setAttribute('value', `${doneTasksAmount}`);
