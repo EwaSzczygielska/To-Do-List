@@ -35,5 +35,8 @@ router.get('/src/js/new-task.js', function (req, res, next) {
   res.sendFile(path.join(__dirname + '/src/js/new-task.js'));
 });
 
+router.get('/src/js/database.js', function (req, res, next) {
+  res.sendFile(path.join(__dirname + '/src/js/database.js'));
+});
 
 module.exports = router;
