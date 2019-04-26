@@ -143,23 +143,29 @@
             var el1 = (task.parentNode.nextElementSibling.nextElementSibling.firstElementChild);
             var el = el1.querySelectorAll(".deadline");
             var newArr = Array.from(el);
-            var newArr1 = [];
-            var date1 = [];
-            for (i = 0; i < newArr.length; i++) {
-                date1[i] = newArr[i].innerText;
-                //date1[i] = Date.parse(date1[i]);
-                newArr1.push(date1[i]);
-                /*if (date1[i]>date1[i+1]) {
-                    newArr1.push(newArr[i]);
-                };*/
-               // tab.splice(1, 0, 'Piotr'); //1 - który index, 0 - ile usunąć, 'Piotr' - element dodawany przed danym indexem
-            
-            
-        }
-    newArr1.sort();
-    console.log(newArr1);
-    
-    },
+
+            function BubbleSort(newArr) {
+                var change, temp;
+                do {
+                    change = false;
+                    for (var i = 0; i < newArr.length - 1; i++) {
+                        var x = Date.parse(newArr[i + 1].innerText);
+                        var y = Date.parse(newArr[i].innerText);
+                        if (x < y) {
+                            temp = newArr[i];
+                            newArr[i] = newArr[i + 1];
+                            newArr[i + 1] = temp;
+                            change = true;
+                        } }
+                } while (change);
+                return newArr;
+            };
+            BubbleSort(newArr);
+             for (i = 0; i < newArr.length; i++) {
+                 console.log(newArr[i].parentNode);
+                 el1.appendChild(newArr[i].parentNode);
+             };
+        },
 
         dateSort: function (task) {
             console.log('date');
