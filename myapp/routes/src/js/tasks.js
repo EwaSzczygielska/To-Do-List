@@ -151,6 +151,12 @@
                     for (var i = 0; i < newArr.length - 1; i++) {
                         var x = Date.parse(newArr[i + 1].innerText);
                         var y = Date.parse(newArr[i].innerText);
+                        if (isNaN(x)) {
+                            x = 4099676400000
+                        }
+                        if (isNaN(y)) {
+                            y = 4099676400000
+                        }
                         if (x < y) {
                             temp = newArr[i];
                             newArr[i] = newArr[i + 1];
@@ -162,7 +168,6 @@
             };
             BubbleSort(newArr);
              for (i = 0; i < newArr.length; i++) {
-                 console.log(newArr[i].parentNode);
                  el1.appendChild(newArr[i].parentNode);
              };
         },
