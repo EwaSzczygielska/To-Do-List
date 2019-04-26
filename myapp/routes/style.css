@@ -586,6 +586,10 @@ span {
     margin-right: 10px;
 }
 
+.deadline:before{
+    content: 'Deadline: ';
+}
+
 .taskText{
     max-width: 75%;
     word-wrap: break-word;

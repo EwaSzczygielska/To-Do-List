@@ -10,7 +10,7 @@ addBtn.addEventListener("click", e => {
         message: " " /*+ idCounter + ". " */+ document.forms[0].elements[0].value + " ",
         priority: document.forms[0].elements[4].value,
         category: "",
-        deadline: "Deadline: " + document.forms[0].elements[5].value,
+        deadline: /*"Deadline: " + */document.forms[0].elements[5].value,
         createDate: currentDate.getDate() + "." + 
                     (currentDate.getMonth()+1) + "." +
                     currentDate.getFullYear()
