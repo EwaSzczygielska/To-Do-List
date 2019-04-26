@@ -71,10 +71,10 @@ async function updateTask(id) {
 
 
 
-async function removeTask(id) {
-    const task = await Task.deleteOne({_id=id});
-    console.log(result);
-}
+//async function removeTask(id) {
+//    const task = await Task.deleteOne({_id=id});
+//    console.log(result);1
+//}
 
 
 
