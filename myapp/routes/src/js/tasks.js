@@ -162,39 +162,46 @@
                             newArr[i] = newArr[i + 1];
                             newArr[i + 1] = temp;
                             change = true;
-                        } }
+                        }
+                    }
                 } while (change);
                 return newArr;
             };
             BubbleSort(newArr);
-             for (i = 0; i < newArr.length; i++) {
-                 el1.appendChild(newArr[i].parentNode);
-             };
+            for (i = 0; i < newArr.length; i++) {
+                el1.appendChild(newArr[i].parentNode);
+            };
         },
 
         categorySort: function (task) {
-             var el1 = (task.parentNode.nextElementSibling.nextElementSibling.firstElementChild);
-             var el = el1.querySelectorAll("div");
-             var newArr = Array.from(el);
-             var newArr1 = [];
-             for (i = 0; i < newArr.length; i++) {
-                 if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-home')) {
-                     newArr1.push(newArr[i]);
-                 }
-             };
-             for (i = 0; i < newArr.length; i++) {
-                 if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-work')) {
-                     newArr1.push(newArr[i]);
-                 }
-             };
-             for (i = 0; i < newArr.length; i++) {
-                 if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-social')) {
-                     newArr1.push(newArr[i]);
-                 }
-             };
-             for (i = 0; i < newArr.length; i++) {
-                 el1.appendChild(newArr1[i]);
-             };
+            var el1 = (task.parentNode.nextElementSibling.nextElementSibling.firstElementChild);
+            var el = el1.querySelectorAll("div");
+            var newArr = Array.from(el);
+            var newArr1 = [];
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-home')) {
+                    newArr1.push(newArr[i]);
+                }
+            };
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-work')) {
+                    newArr1.push(newArr[i]);
+                }
+            };
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-social')) {
+                    newArr1.push(newArr[i]);
+                }
+            };
+            for (i = 0; i < newArr.length; i++) {
+                if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-none')) {
+                    newArr1.push(newArr[i]);
+                }
+            };
+
+            for (i = 0; i < newArr.length; i++) {
+                el1.appendChild(newArr1[i]);
+            };
         },
     };
     app.init();
