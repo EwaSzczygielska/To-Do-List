@@ -50,9 +50,22 @@ h1 {
     padding: 0;
 }
 
-button,input,label:hover{
+button,label:hover{
     cursor: pointer;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+input[type="date"]::-moz-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+input:hover {
+    cursor:auto;
+}
+
 .logout {
     height: 30px;
     border: 0;
@@ -868,18 +881,4 @@ footer {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {}
 
-@media screen and (min-width: 992px) and (max-width: 1199px) {}
-
-@media screen and (min-width: 1200px) {}
-
-@keyframes animation1 {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: .5;
-    }
-}

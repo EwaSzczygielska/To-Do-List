@@ -53,6 +53,7 @@ addBtn.addEventListener("click", e => {
     if (newTask.category == "home") taskContent.classList.add("ctg-home");
     else if (newTask.category == "work") taskContent.classList.add("ctg-work");
     else if (newTask.category == "social") taskContent.classList.add("ctg-social");
+    else taskContent.classList.add("ctg-none");
 
     newTaskElement.appendChild(priorityIndicator);
     newTaskElement.appendChild(taskContent);
