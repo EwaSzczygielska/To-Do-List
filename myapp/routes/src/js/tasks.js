@@ -31,8 +31,8 @@
                     app.prioritySort(e.target.parentNode.parentNode.parentNode);
                 } else if (e.target.classList.contains('sort-deadline')) {
                     app.deadlineSort(e.target.parentNode.parentNode.parentNode);
-                } else if (e.target.classList.contains('sort-createdate')) {
-                    app.dateSort(e.target.parentNode.parentNode.parentNode);
+                } else if (e.target.classList.contains('sort-category')) {
+                    app.categorySort(e.target.parentNode.parentNode.parentNode);
                 }
             }, false);
         },
@@ -172,8 +172,29 @@
              };
         },
 
-        dateSort: function (task) {
-            console.log('date');
+        categorySort: function (task) {
+             var el1 = (task.parentNode.nextElementSibling.nextElementSibling.firstElementChild);
+             var el = el1.querySelectorAll("div");
+             var newArr = Array.from(el);
+             var newArr1 = [];
+             for (i = 0; i < newArr.length; i++) {
+                 if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-home')) {
+                     newArr1.push(newArr[i]);
+                 }
+             };
+             for (i = 0; i < newArr.length; i++) {
+                 if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-work')) {
+                     newArr1.push(newArr[i]);
+                 }
+             };
+             for (i = 0; i < newArr.length; i++) {
+                 if (newArr[i].firstElementChild.nextElementSibling.nextElementSibling.classList.contains('ctg-social')) {
+                     newArr1.push(newArr[i]);
+                 }
+             };
+             for (i = 0; i < newArr.length; i++) {
+                 el1.appendChild(newArr1[i]);
+             };
         },
     };
     app.init();
