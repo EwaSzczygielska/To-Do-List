@@ -770,18 +770,4 @@ footer {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {}
 
-@media screen and (min-width: 992px) and (max-width: 1199px) {}
-
-@media screen and (min-width: 1200px) {}
-
-@keyframes animation1 {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: .5;
-    }
-}
