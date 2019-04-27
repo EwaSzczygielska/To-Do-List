@@ -39,4 +39,8 @@ router.get('/src/js/database.js', function (req, res, next) {
   res.sendFile(path.join(__dirname + '/src/js/database.js'));
 });
 
+router.get('/src/js/log-in.js', function (req, res, next) {
+  res.sendFile(path.join(__dirname + '/src/js/log-in.js'));
+});
+
 module.exports = router;
