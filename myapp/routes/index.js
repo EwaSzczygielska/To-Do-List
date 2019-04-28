@@ -7,8 +7,11 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
  // const genres = await Genre.find().sort('name');
+  const tasks = await Task.find().find();
+  console.log(tasks);
   res.sendFile(path.join(__dirname + '/src/index.html'));
 });
+
 router.get('/style.css', function(req, res, next) {
   res.sendFile(path.join(__dirname + '/style.css'));
 });
@@ -49,7 +52,7 @@ router.post('/add', async (req, res) => {
   res.redirect('/');
 });
 
-async function createTask() {
+/*async function createTask() {
   const task = new Task({
       content: req.body.content,
       category: req.body.category,
@@ -59,13 +62,14 @@ async function createTask() {
   
   const result = await task.save();
   console.log(result);  
-}
+}*/
+
 
 async function getTasks() {
   const tasks = await Task.find().find();//in {inside you can enter }
   // for limit .limit(10)
   // to sort sort({priotity: 1});
-  console.log(tasks)
+  console.log(tasks);
 }
 
 async function updateTask(id) {
