@@ -21,17 +21,17 @@ router.get('/src/img/main-bg.svg', function (req, res, next) {
   res.sendFile(path.join(__dirname + '/src/img/main-bg.svg'));
 });
 
-// router.get('/src/js/slider.js', function (req, res, next) {
-//   res.sendFile(path.join(__dirname + '/src/js/slider.js'));
-// });
+//router.get('/slider.js', function (req, res, next) {
+//  res.sendFile(path.join(__dirname + '/slider.js'));
+//});
 
-// router.get('/src/js/tasks.js', function (req, res, next) {
-//   res.sendFile(path.join(__dirname + '/src/js/tasks.js'));
-// });
+//router.get('/tasks.js', function (req, res, next) {
+// res.sendFile(path.join(__dirname + '/tasks.js'));
+//});
 
-// router.get('/src/js/new-task.js', function (req, res, next) {
-//   res.sendFile(path.join(__dirname + '/src/js/new-task.js'));
-// });
+//router.get('/new-task.js', function (req, res, next) {
+ // res.sendFile(path.join(__dirname + '/new-task.js'));
+//});
 
 
 
