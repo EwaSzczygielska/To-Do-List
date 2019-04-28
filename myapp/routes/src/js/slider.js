@@ -1,5 +1,6 @@
 let slider = document.querySelector('#priority-slider');
 
+
 slider.addEventListener("change", function () {
     if (slider.value == 1) {
         slider.classList.remove("slider1");

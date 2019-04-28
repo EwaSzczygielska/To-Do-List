@@ -2,6 +2,103 @@ var express = require('express');
 const path = require('path');
 var router = express.Router();
 
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:3000/myapp', {
+  useNewUrlParser: true
+})
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+  // we're connected!
+});
+
+
+const taskSchema = new mongoose.Schema({
+  content: {
+    type: String,
+    required: true,
+    minlength: 10,
+    maxlength: 255,
+  },
+  category: {
+    type: String,
+    required: false,
+    enum: ['home', 'work', 'social']
+  },
+  priority: {
+    type: Number,
+    required: true,
+    min: 1,
+    max: 3
+  },
+  createDate: {
+    type: Date,
+    required: true,
+    default: Date.now()
+  },
+  deadline: {
+    type: Date,
+    required: false,
+  },
+  status: {
+    type: String,
+    required: true,
+    enum: ['to-do', 'in-progress', 'done']
+  }
+});
+
+const Task = mongoose.model('Task', taskSchema);
+
+async function createTask() {
+  const task = new Task({
+    content: 'test 2 it will pass',
+    category: 'home',
+    priority: 1,
+    status: 'to-do'
+  });
+
+  const result = await task.save();
+  console.log(result);
+}
+
+async function getTasks() {
+  const tasks = await Task.find().find(); //in {inside you can enter }
+  // for limit .limit(10)
+  // to sort sort({priotity: 1});
+  console.log(tasks)
+}
+
+async function updateTask(id) {
+  const task = await Task.findById(id);
+  if (!task) return;
+  task.set({
+    status: 'done'
+  });
+  const result = await task.save();
+  console.log(result);
+}
+
+function hello() {
+  console.log("Hello World");
+}
+
+
+
+//async function removeTask(id) {
+//    const task = await Task.deleteOne({_id=id});
+//    console.log(result);1
+//}
+
+
+
+//createTask();
+//getTasks();
+//updateTask('5cc240d3977c3f07704fd0f4');
+//removeTask('5cc240d3977c3f07704fd0f4');
+
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname + '/index.html'));
@@ -44,3 +141,4 @@ router.get('/src/js/log-in.js', function (req, res, next) {
 });
 
 module.exports = router;
+
