@@ -21,8 +21,8 @@
 
     <article class="add-task">
         <h2> <span>Add</span> new task </h2>
-        <form id="add-task-form">
-            <input type="text" class="add-task-input" id="maininput">
+        <form id="add-task-form" action="/add" method="POST">
+            <input type="text" class="add-task-input" id="maininput" name="content">
             <div class="settings-wrapper">
                 <div class="category set">
                     <p id="lab">Category</p>
