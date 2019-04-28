@@ -3,7 +3,7 @@
     --main-color-light: rgba(34, 140, 140, 0.3);
     --main-color-extra-light: rgba(34, 140, 140, 0.15);
     --main-color-accent: rgba(34, 140, 140, 0.07);
-    
+
     --home-color: rgba(182, 91, 128, 1);
     --work-color: rgb(123, 108, 206);
     --social-color: rgba(38, 110, 218, 0.8);
@@ -50,7 +50,8 @@ h1 {
     padding: 0;
 }
 
-button,label:hover{
+button,
+label:hover {
     cursor: pointer;
 }
 
@@ -63,7 +64,7 @@ input[type="date"]::-moz-calendar-picker-indicator {
 }
 
 input:hover {
-    cursor:auto;
+    cursor: auto;
 }
 
 .logout-button {
@@ -122,17 +123,17 @@ label {
     margin: 5%;
 }
 
-.modal hr{
+.modal hr {
     width: 100%;
     color: var(--main-color-light);
 }
 
-.sign-up{
+.sign-up {
     background-color: var(--main-color-light);
 }
 
-.log-in > input,
-.sign-up > input{
+.log-in>input,
+.sign-up>input {
     font: var(--font1);
     font-size: 1.2em;
     margin: 10px;
@@ -144,12 +145,12 @@ label {
     box-sizing: border-box;
 }
 
-.log-in input{
+.log-in input {
     background-color: var(--main-color-extra-light);
     border: none;
 }
 
-.sign-up input{
+.sign-up input {
     border: none;
 }
 
@@ -170,9 +171,10 @@ label {
     transition: all 0.5s;
 }
 
-.modal button:hover{
+.modal button:hover {
     opacity: 0.7;
 }
+
 /*end of styling log in / sign up */
 
 /*start of styling add task */
@@ -288,7 +290,7 @@ input[type="radio"]:checked+ {
     transition: all ease-in-out .4s;
 }
 
-.add-task button:hover{
+.add-task button:hover {
     transform: scale(1.1);
 }
 
@@ -551,12 +553,14 @@ progress::-webkit-progress-value {
     opacity: 0.5;
     transition: .8s;
 }
+
 progress::-moz-progress-bar {
     background: linear-gradient(to right, #228c8c 0%, #266eda 33%, #7b6cce 66%, #b65b80 100%);
     border-radius: 5px;
     opacity: 0.5;
     transition: .8s;
 }
+
 .lists {
     display: flex;
     flex-wrap: wrap;
@@ -595,7 +599,7 @@ progress::-moz-progress-bar {
     border-bottom: 1px solid #CCCCCC;
 }
 
-.to-do-list .task>*{
+.to-do-list .task>* {
     display: inline;
 }
 
@@ -610,9 +614,9 @@ progress::-moz-progress-bar {
 }
 
 .to-do-list .task p span:first-child {
-   color: #444444;
-   display: inline-block;
-   min-width: 100px;
+    color: #444444;
+    display: inline-block;
+    min-width: 100px;
 }
 
 .to-do-list .task p span:last-child {
@@ -700,27 +704,27 @@ span {
     margin-right: 10px;
 }
 
-.deadline:before{
+.deadline:before {
     content: 'Deadline: ';
 }
 
-.taskText{
+.taskText {
     max-width: 75%;
     word-wrap: break-word;
 }
 
-.done-list{
+.done-list {
     position: relative;
 }
 
-.done-list .task{
+.done-list .task {
     font-size: 1.5em;
     padding: 5px 0;
     margin: 0;
     border-bottom: 1px solid #CCCCCC;
 }
 
-.done-list .task p{
+.done-list .task p {
     word-wrap: break-word;
     hyphens: auto;
 }
@@ -741,6 +745,7 @@ span {
     box-shadow: 0px 0px 31px -3px rgba(0, 0, 0, 0.48);
     transition: all ease-in-out .3s;
 }
+
 .clear-button:hover {
     transform: scale(1.1);
 }
@@ -826,6 +831,15 @@ footer {
     .sign-up {
         min-width: 250px;
     }
+
+    .to-do-list .task span,
+    .done-list .task p {
+        font-size: .9em;
+    }
+
+    #maininput{
+        font-size: 1.1em;
+    }
 }
 
 @media screen and (min-width: 0px) and (max-width: 359px) {
@@ -879,6 +893,12 @@ footer {
     .sign-up {
         min-width: 200px;
     }
+
+    .to-do-list .task span,
+    .done-list .task p {
+        font-size: .9em;
+    }
+    #maininput {
+        font-size: 1.1em;
+    }
 }
-
-
